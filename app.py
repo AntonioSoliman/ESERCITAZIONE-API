@@ -3,6 +3,12 @@ import requests
 app = Flask(__name__)
 NASA_API_KEY = 'VxYup1QihuUTeig45fsgYdznsIrVcade44hhe2Yq' #api kei della nasa
 
+# Pagina principale
+@app.route('/' )
+def home():
+    return render_template('home.html')
+
+
 #ourte /nasa per immagine NASA
 @app.route('/nasa')
 def nasa_home():
