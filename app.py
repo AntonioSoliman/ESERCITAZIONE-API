@@ -21,5 +21,11 @@ def cat_home():
     response = requests.get('https://catfact.ninja/fact') #richiedo i dati
     data = response.json() #converte da json a dict python
     return render_template('cat_fact.html', fact=data.get("fact"))
+@app.route('/cat/change')
+def cat_change():
+    response = requests.get('https://catfact.ninja/fact') #richiedo i dati
+    data = response.json() #converte da json a dict python
+    return render_template('cat_fact.html', fact=data.get("fact"))
+
 if __name__ == '__main__':
     app.run(debug=True)
